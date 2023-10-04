@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Shows4All.props" />
+</Project>
