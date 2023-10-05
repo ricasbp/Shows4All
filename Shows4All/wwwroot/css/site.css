@@ -16,3 +16,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+/** Our General Style for the Website*/
+.mainText{
+    padding: 75px 20px;
+}

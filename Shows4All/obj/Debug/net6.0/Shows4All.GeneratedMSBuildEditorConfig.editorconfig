@@ -16,12 +16,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Ricas\Desktop\Elson\Project\Shows4All\Shows4All
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Ricas/Desktop/Elson/Project/Shows4All/Shows4All/Pages/Checkout/Confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tvdXRcQ29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ricas/Desktop/Elson/Project/Shows4All/Shows4All/Pages/Checkout/SerieInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tvdXRcU2VyaWVJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ricas/Desktop/Elson/Project/Shows4All/Shows4All/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Ricas/Desktop/Elson/Project/Shows4All/Shows4All/Pages/Form/SerieEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxTZXJpZUVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ricas/Desktop/Elson/Project/Shows4All/Shows4All/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ricas/Desktop/Elson/Project/Shows4All/Shows4All/Pages/MainScreenClient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpblNjcmVlbkNsaWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ricas/Desktop/Elson/Project/Shows4All/Shows4All/Pages/Privacy.cshtml]

@@ -1,0 +1,75 @@
+﻿@page
+@model Shows4All.Pages.MainScreenClientModel
+@{
+}
+
+<!--  Comentário:
+<
+>
+<div></div>
+<br>
+-->
+
+<div class="text-center">
+    <div class="mainText">
+    <!--  Comentário: CSS Geral da Aplicação definido em site.css -->
+        <h1 class="display-4">Bem-Vindo ao Shows4All</h1>
+        <h3> Continua a ver as tuas séries!  </h3>
+        <div class="container">
+            <div class= "row">
+                <div class="col-12 mb-5 mt-5">
+                    <!--  Comentário: Usando o boostrap usamos a default class "containter"
+                                      Usamos col-3, porque no boostrap o website é devidido em 12 "espaços"
+                                            e queremos ter 4 series displayed.
+                                      mb = Margin e  mt = Margin -->
+                    <div class=" w-100 row makeYourOwnDiv">
+                    <!--  Comentário: Esta class vai ser o Design Geral das Series.
+                                      w = width -->
+                        <div class="col-3">
+                        <!--  Comentário: Perguntei ChatGPT como fazer Imagens terem tamanho definido. -->
+                            <img src="~/images/Serie1.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 1">
+                        </div>
+                        <div class="col-3">
+                            <img src="~/images/Serie2.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 2">
+                        </div>
+                        <div class="col-3">
+                            <img src="~/images/Serie3.jpeg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 3">
+                        </div>
+                        <div class="col-3">
+                            <img src="~/images/Serie1.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 4">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <h3> Compra uma nova série!  </h3>
+            <div class="col-12 mb-5 mt-5">
+                <!--  Comentário: Usando o boostrap usamos a default class "containter"
+                                  Usamos col-3, porque no boostrap o website é devidido em 12 "espaços"
+                                        e queremos ter 4 series displayed.
+                                  mb = Margin e  mt = Margin -->
+                <div class=" w-100 row makeYourOwnDiv">
+                    <!--  Comentário: Esta class vai ser o Design Geral das Series.
+                                      w = width -->
+                    <div class="col-3">
+                        <!--  Comentário: Perguntei ChatGPT como fazer Imagens terem tamanho definido. -->
+                        <img src="~/images/Serie1.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 1">
+                    </div>
+                    <div class="col-3">
+                        <img src="~/images/Serie2.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 2">
+                    </div>
+                    <div class="col-3">
+                        <img src="~/images/Serie3.jpeg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 3">
+                    </div>
+                    <div class="col-3">
+                        <img src="~/images/Serie1.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 4">
+                    </div>
+
+                </div>
+            </div>
+</div>
+
+<a class="nav-link text-dark" asp-area="" asp-page="/Forms/SerieEdit">SerieEdit</a>
+<a class="nav-link text-dark" asp-area="" asp-page="/Checkout/SerieInfo">SerieInfo</a>
