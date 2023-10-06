@@ -3,3 +3,30 @@
 @{
 }
 
+<!--  Comentário:
+<
+>
+<div>
+</div>
+<br/>
+-->
+
+<div class="text-center container">
+    <h1> Cria uma Série </h1>
+
+    <form method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 rounded-6 alert-light ">
+
+        <input type="text" asp-for="Serie.SerieName" placeholder="Adiciona uma nome à Série ...">
+        <br />
+
+        <input type="text" asp-for="Serie.Description" placeholder="Adiciona uma deswcrição à Série ...">
+        <br />
+
+        <input type="text" asp-for="Serie.Price" placeholder="Adiciona um preço à Série ...">
+        <br />
+
+        <button class="btn btn-primary mt-1" type="submit"> Submit New Serie </button>
+    </form>
+
+
+</div>

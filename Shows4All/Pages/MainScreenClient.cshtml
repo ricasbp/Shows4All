@@ -23,21 +23,16 @@
                                             e queremos ter 4 series displayed.
                                       mb = Margin e  mt = Margin -->
                     <div class=" w-100 row makeYourOwnDiv">
-                    <!--  Comentário: Esta class vai ser o Design Geral das Series.
-                                      w = width -->
-                        <div class="col-3">
-                        <!--  Comentário: Perguntei ChatGPT como fazer Imagens terem tamanho definido. -->
-                            <img src="~/images/Serie1.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 1">
-                        </div>
-                        <div class="col-3">
-                            <img src="~/images/Serie2.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 2">
-                        </div>
-                        <div class="col-3">
-                            <img src="~/images/Serie3.jpeg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 3">
-                        </div>
-                        <div class="col-3">
-                            <img src="~/images/Serie1.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 4">
-                        </div>
+                        <!--  Comentário: Esta class vai ser o Design Geral das Series.
+                                          w = width -->
+                        @foreach (var serie in Model.fakeSerieDB)
+                        {
+                            <div class="col-3">
+                                <!--  Comentário: Perguntei ChatGPT como fazer imagens terem sempre o mesmo tamanho. -->
+                                <img src="~/images/Serie1.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 1">
+                                <h3> @serie.SerieName  </h3>
+                            </div>
+                        }
 
                     </div>
                 </div>
@@ -53,23 +48,18 @@
                 <div class=" w-100 row makeYourOwnDiv">
                     <!--  Comentário: Esta class vai ser o Design Geral das Series.
                                       w = width -->
-                    <div class="col-3">
-                        <!--  Comentário: Perguntei ChatGPT como fazer Imagens terem tamanho definido. -->
-                        <img src="~/images/Serie1.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 1">
-                    </div>
-                    <div class="col-3">
-                        <img src="~/images/Serie2.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 2">
-                    </div>
-                    <div class="col-3">
-                        <img src="~/images/Serie3.jpeg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 3">
-                    </div>
-                    <div class="col-3">
-                        <img src="~/images/Serie1.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 4">
-                    </div>
+                @foreach (var serie in Model.fakeSerieDB)
+                {
+                <div class="col-3">
+                    <!--  Comentário: Perguntei ChatGPT como fazer imagens terem sempre o mesmo tamanho. -->
+                    <img src="~/images/Serie1.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 1">
+                    <h3> @serie.SerieName  </h3>
+                </div>
+                }
 
                 </div>
             </div>
 </div>
 
-<a class="nav-link text-dark" asp-area="" asp-page="/Forms/SerieEdit">SerieEdit</a>
+<a class="nav-link text-dark" asp-area="" asp-page="/Form/SerieEdit">SerieEdit</a>
 <a class="nav-link text-dark" asp-area="" asp-page="/Checkout/SerieInfo">SerieInfo</a>

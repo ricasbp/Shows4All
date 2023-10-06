@@ -1,7 +1,21 @@
+using Shows4All.Data;
+using Shows4All.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    //needs Nugget Extensions to connect to the SQL Server
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+
 builder.Services.AddRazorPages();
+
+
 
 var app = builder.Build();
 
