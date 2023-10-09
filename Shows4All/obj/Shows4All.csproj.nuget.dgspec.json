@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ricas\\Desktop\\Elson\\Project\\Shows4All\\Shows4All\\Shows4All.csproj": {}
+    "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\Shows4All.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ricas\\Desktop\\Elson\\Project\\Shows4All\\Shows4All\\Shows4All.csproj": {
+    "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\Shows4All.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ricas\\Desktop\\Elson\\Project\\Shows4All\\Shows4All\\Shows4All.csproj",
+        "projectUniqueName": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\Shows4All.csproj",
         "projectName": "Shows4All",
-        "projectPath": "C:\\Users\\Ricas\\Desktop\\Elson\\Project\\Shows4All\\Shows4All\\Shows4All.csproj",
+        "projectPath": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\Shows4All.csproj",
         "packagesPath": "C:\\Users\\Ricas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ricas\\Desktop\\Elson\\Project\\Shows4All\\Shows4All\\obj\\",
+        "outputPath": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ricas\\AppData\\Roaming\\NuGet\\NuGet.Config",

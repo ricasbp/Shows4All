@@ -10,8 +10,8 @@ namespace Shows4All.Models
         public string Description { get; set; }
         public double Price { get; set; }
 
-        //Falta List of Ratings
-        //      List of Actors
+
+
         public SerieModel()
         {
             this.SerieName = "DbTest";

@@ -7,6 +7,8 @@ namespace Shows4All.Data
     {
         public DbSet<SerieModel> SerieModel { get; set; }
 
+        public DbSet<ClienteModel> ClientModel { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 

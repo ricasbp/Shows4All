@@ -4,12 +4,19 @@
     ViewData["Title"] = "Home page";
 }
 
-<!--  Comentário:
+<!--  Comentário, Não tenho estas teclas no computador:
 <
 >
-<div>
-</div>
+<div></div>
+<br>
 -->
+
+<header> <!-- NOT WORKING -->
+    <nav class="hide-navigation">
+        <!-- Hide Navigation bar content for login(Index) page -->
+    </nav>
+</header>
+
 
 <div class="text-center">
     <div class="mainText">
@@ -17,4 +24,24 @@
         <h2> PorFavor, insere os teus detalhes para entrares na tua conta.</h2>
     </div>
     <br/>
+
+        <form method="post">
+            <input type="text" asp-for="Login.Username" placeholder="Username" />
+            <input type="password" asp-for="Login.Password" placeholder="Password" />
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Display validation errors if there are any -->
+        @if (ViewData.ModelState.Values.Any(v => v.Errors.Count > 0))
+        {
+            <div class="alert alert-danger" role="alert">
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <p>@error.ErrorMessage</p>
+                }
+            </div>
+        }
+
+        
+    </div>
 </div>
