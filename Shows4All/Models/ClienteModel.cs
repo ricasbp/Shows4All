@@ -11,12 +11,12 @@
 
         public ClienteModel()
         {
+            //First test
             //this.Username = "Elson";
             //this.Password = "ola";
             //this.isAdmin = false;
 
         }
-
     }
 
    

@@ -29,14 +29,14 @@ namespace Shows4All.Pages
         public IActionResult OnPost()
         {
 
-            _context.ClientModel.Add(new ClienteModel());
-            _context.SaveChanges();
+            //_context.ClienteDB.Add(new ClienteModel());
+            //_context.SaveChanges();
 
             //ChatGPT Base Code Generated
             if (ModelState.IsValid)
             {
                 // Attempt to find a user with the provided username in the database
-                var user = _context.ClientModel.FirstOrDefault(u => u.Username == Login.Username);
+                var user = _context.ClienteDB.FirstOrDefault(u => u.Username == Login.Username);
 
                 if (user != null && IsPasswordValid(user, Login.Password))
                 {
@@ -65,7 +65,7 @@ namespace Shows4All.Pages
             }
 
             // Check if the provided password matches the stored password
-            return client.Password == password;
+            return client.Password.Equals(password);
         }
     }
 }

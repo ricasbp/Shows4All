@@ -21,7 +21,7 @@ namespace Shows4All.Pages.Form
         
         public void OnGet()
         {
-            _context.SerieModel.Add(new SerieModel());
+            _context.SerieDB.Add(new SerieModel());
             _context.SaveChanges();
         }
     }

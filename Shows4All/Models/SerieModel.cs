@@ -14,9 +14,9 @@ namespace Shows4All.Models
 
         public SerieModel()
         {
-            this.SerieName = "DbTest";
-            this.Description = "DbTest";
-            this.Price = 200;
+            //this.SerieName = "DbTest";
+            //this.Description = "DbTest";
+            //this.Price = 200;
         }
     }
      

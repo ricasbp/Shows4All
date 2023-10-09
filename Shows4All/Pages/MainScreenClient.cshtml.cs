@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using Shows4All.Data;
 using Shows4All.Models;
 
 namespace Shows4All.Pages
@@ -25,8 +27,30 @@ namespace Shows4All.Pages
                 Description="Yau4Descp",
                 Price=4.00}
         };
+
+        [BindProperty]
+        public ClienteSeriesModel ClienteSeries { get; set; }
+
+
+        //this context is our database
+        private readonly ApplicationDbContext _context;
+        public MainScreenClientModel(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         public void OnGet()
         {
+            var clienteSeriesModel = new ClienteSeriesModel(this._context);
+
+            var ClientId = 1;
+            var SerieId = 3;
+
+            clienteSeriesModel.Initialize(ClientId, SerieId, 2.00); // Set the properties
+
+            _context.ClienteSeriesDB.Add(clienteSeriesModel);
+            _context.SaveChanges();
         }
+
     }
 }
