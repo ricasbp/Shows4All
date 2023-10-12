@@ -1,5 +1,5 @@
 ﻿@page
-@model Shows4All.Pages.MainScreenClientModel
+@model Shows4All.Pages.MainScreenClient
 @{
 }
 
@@ -32,40 +32,47 @@
                     <div class=" w-100 row makeYourOwnDiv">
                         <!--  Comentário: Esta class vai ser o Design Geral das Series.
                                           w = width -->
-                        @foreach (var serie in Model.fakeSerieDB)
+
+                        @foreach (var serie in Model.seriesDoCliente.Take(4)) // Take the first 4 series
                         {
+                            var imagePath = "/images/" + (serie.imageURL + ".jpg");
                             <div class="col-3">
                                 <!--  Comentário: Perguntei ChatGPT como fazer imagens terem sempre o mesmo tamanho. -->
-                                <img src="~/images/Serie1.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 1">
+                                <img src="@imagePath" class="img-fluid" style="max-width: 100%; height: auto;" alt=@serie.SerieName>
                                 <h3> @serie.SerieName  </h3>
                             </div>
                         }
+
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        <h3> Compra uma nova série!  </h3>
-            <div class="col-12 mb-5 mt-5">
-                <!--  Comentário: Usando o boostrap usamos a default class "containter"
-                                  Usamos col-3, porque no boostrap o website é devidido em 12 "espaços"
-                                        e queremos ter 4 series displayed.
-                                  mb = Margin e  mt = Margin -->
-                <div class=" w-100 row makeYourOwnDiv">
-                    <!--  Comentário: Esta class vai ser o Design Geral das Series.
-                                      w = width -->
-                @foreach (var serie in Model.fakeSerieDB)
-                {
-                <div class="col-3">
-                    <!--  Comentário: Perguntei ChatGPT como fazer imagens terem sempre o mesmo tamanho. -->
-                    <img src="~/images/Serie1.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="Serie 1">
-                    <h3> @serie.SerieName  </h3>
-                </div>
-                }
 
-                </div>
+    <h3> Compra uma nova série!  </h3>
+        <div class="col-12 mb-5 mt-5">
+            <!--  Comentário: Usando o boostrap usamos a default class "containter"
+                                Usamos col-3, porque no boostrap o website é devidido em 12 "espaços"
+                                    e queremos ter 4 series displayed.
+                                mb = Margin e  mt = Margin -->
+            <div class=" w-100 row makeYourOwnDiv">
+                <!--  Comentário: Esta class vai ser o Design Geral das Series.
+                                                w = width -->
+
+                    @foreach (var serie in Model.seriesDoCliente.Take(4)) // Take the first 4 series
+                    {
+                        var imagePath = "/images/" + (serie.imageURL + ".jpg");
+                        <div class="col-3">
+                            <!--  Comentário: Perguntei ChatGPT como fazer imagens terem sempre o mesmo tamanho. -->
+                            <img src="@imagePath" class="img-fluid" style="max-width: 100%; height: auto;" alt=@serie.SerieName>
+                            <h3> @serie.SerieName  </h3>
+                            <a class="btn btn-primary" asp-area="" asp-page="/SerieDetails" asp-route-id="@serie.Id">View Details</a>
+                        </div>
+                    }
+
             </div>
+        </div>
 </div>
 
 <a class="nav-link text-dark" asp-area="" asp-page="/Form/SerieEdit">SerieEdit</a>

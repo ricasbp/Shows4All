@@ -11,5 +11,14 @@
 <br>
 -->
 
+<div class="container">
+    <h1>@Model.SerieName</h1>
+    <p>@Model.Description</p>
+    <p>Price: $@Model.Price</p>
+    <img src="~/images/@Model.imageURL.jpg" alt="@Model.SerieName" />
+
+    <!-- Add any other series details you want to display -->
+</div>
+
 
 <a class="nav-link text-dark" asp-area="" asp-page="/Checkout/Confirmation">If Not Bought, Click Here for Confirmation Page</a>

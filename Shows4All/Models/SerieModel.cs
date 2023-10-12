@@ -9,14 +9,20 @@ namespace Shows4All.Models
         public string SerieName { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
+        public string imageURL { get; set; }
 
 
 
         public SerieModel()
         {
-            //this.SerieName = "DbTest";
-            //this.Description = "DbTest";
-            //this.Price = 200;
+        }
+
+        public SerieModel(String SerieName, String Description, double Price, String Url)
+        {
+            this.SerieName = SerieName;
+            this.Description = Description;
+            this.Price = Price;
+            this.imageURL = Url;
         }
     }
      

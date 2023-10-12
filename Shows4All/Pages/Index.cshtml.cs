@@ -23,8 +23,27 @@ namespace Shows4All.Pages
 
         public void OnGet()
         {
-            //_context.SerieModel.Add(new SerieModel());
-            //_context.SaveChanges();
+            //Populate our SerieDB
+            /*
+            SerieModel serie1 = new SerieModel("The Shining", "Horror Movie", 2, "jack");
+            SerieModel serie2 = new SerieModel("The Wolf of Wall Street", "Action", 2, "wolf");
+            SerieModel serie3 = new SerieModel("Silence of the Lambs", "Action Anime", 5, "silence");
+            SerieModel serie4 = new SerieModel("Ponyo", "Action Anime", 5, "ponyo");
+            SerieModel serie5 = new SerieModel("Parasite", "Drama, Horror", 2, "parasite");
+            SerieModel serie6 = new SerieModel("Puss in the Boots", "Animation", 7, "puss");
+            SerieModel serie7 = new SerieModel("Princess Mononoke", "Action Anime", 5, "mononoke");
+            SerieModel serie8 = new SerieModel("The Grave of the Fireflies", "Drama Anime", 5, "fireflies");
+
+            _context.SerieDB.Add(serie1);
+            _context.SerieDB.Add(serie2);
+            _context.SerieDB.Add(serie3);
+            _context.SerieDB.Add(serie4);
+            _context.SerieDB.Add(serie5);
+            _context.SerieDB.Add(serie6);
+            _context.SerieDB.Add(serie7);
+            _context.SerieDB.Add(serie8);
+            _context.SaveChanges();
+            */
         }
         public IActionResult OnPost()
         {

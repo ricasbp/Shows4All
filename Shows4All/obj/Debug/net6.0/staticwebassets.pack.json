@@ -13,16 +13,36 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\Serie1.jpg",
-      "PackagePath": "staticwebassets\\images\\Serie1.jpg"
+      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\fireflies.jpg",
+      "PackagePath": "staticwebassets\\images\\fireflies.jpg"
     },
     {
-      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\Serie2.jpg",
-      "PackagePath": "staticwebassets\\images\\Serie2.jpg"
+      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\jack.jpg",
+      "PackagePath": "staticwebassets\\images\\jack.jpg"
     },
     {
-      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\Serie3.jpeg",
-      "PackagePath": "staticwebassets\\images\\Serie3.jpeg"
+      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\mononoke.jpg",
+      "PackagePath": "staticwebassets\\images\\mononoke.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\parasite.jpg",
+      "PackagePath": "staticwebassets\\images\\parasite.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\ponyo.jpg",
+      "PackagePath": "staticwebassets\\images\\ponyo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\puss.jpg",
+      "PackagePath": "staticwebassets\\images\\puss.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\silence.jpg",
+      "PackagePath": "staticwebassets\\images\\silence.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\wolf.jpg",
+      "PackagePath": "staticwebassets\\images\\wolf.jpg"
     },
     {
       "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\js\\site.js",
