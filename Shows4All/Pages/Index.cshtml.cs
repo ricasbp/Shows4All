@@ -44,47 +44,63 @@ namespace Shows4All.Pages
             _context.SerieDB.Add(serie8);
             _context.SaveChanges();
             */
+
+            /*
+            SerieModel serie1 = new SerieModel("Shrek 2", "Horror Movie", 2, "Shrek2");
+            _context.SerieDB.Add(serie1);
+            SerieModel serie2 = new SerieModel("Spider-Man into the SpiderVerse", "Action Animation", 2, "Spiderverse");
+            _context.SerieDB.Add(serie2);
+            _context.SaveChanges();
+            */
         }
         public IActionResult OnPost()
+{
+
+//_context.ClienteDB.Add(new ClienteModel());
+//_context.SaveChanges();
+
+
+if (ModelState.IsValid)
+{
+    // Attempt to find a user with the provided username in the database
+    var user = _context.ClienteDB.FirstOrDefault(u => u.Username == Login.Username);
+
+    if (user != null && IsPasswordValid(user, Login.Password))
+    {
+        // Successful login
+
+        if ((bool)user.isAdmin)
         {
-
-            //_context.ClienteDB.Add(new ClienteModel());
-            //_context.SaveChanges();
-
-            //ChatGPT Base Code Generated
-            if (ModelState.IsValid)
-            {
-                // Attempt to find a user with the provided username in the database
-                var user = _context.ClienteDB.FirstOrDefault(u => u.Username == Login.Username);
-
-                if (user != null && IsPasswordValid(user, Login.Password))
-                {
-                    // Successful login
-                    // You can implement authentication here (e.g., setting a cookie)
-                    return RedirectToPage("/MainScreenClient"); // Redirect to a protected page
-                }
-                else
-                {
-                    // Invalid login, display an error message
-                    ModelState.AddModelError(string.Empty, "Invalid username or password.");
-                    return Page(); // Stay on the login page
-                }
-            }
-
-            // If ModelState is not valid, return to the login page
-            return Page();
+            return RedirectToPage("/MainScreenAdmin", new { userID = user.Id }); // Redirect to a protected page
+        }
+        else
+        {
+            return RedirectToPage("/MainScreenClient", new { userID = user.Id }); // Redirect to a protected page
         }
 
-        private bool IsPasswordValid(ClienteModel client, string password)
-        {
-            // Check if the client is null
-            if (client == null)
-            {
-                return false; // Invalid client
-            }
-
-            // Check if the provided password matches the stored password
-            return client.Password.Equals(password);
-        }
     }
+    else
+    {
+        // Invalid login, display an error message
+        ModelState.AddModelError(string.Empty, "Invalid username or password.");
+        return Page(); // Stay on the login page
+    }
+}
+
+// If ModelState is not valid, return to the login page
+return Page();
+}
+
+private bool IsPasswordValid(ClienteModel client, string password)
+{
+// Check if the client is null
+if (client == null)
+{
+    return false; // Invalid client
+}
+
+// Check if the provided password matches the stored password
+return client.Password.Equals(password);
+}
+}
 }

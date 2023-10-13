@@ -10,22 +10,34 @@ namespace Shows4All.Pages
     {
         public List<SerieModel> seriesDoCliente = new List<SerieModel>();
 
+        public List<SerieModel> todasAsSeriesNaoCompradasPeloCliente = new List<SerieModel>();
+
         [BindProperty]
         public ClienteSeriesModel ClienteSeries { get; set; }
-
-
-        public int clienteAtualID = 1;
         public ClienteModel ClienteModelAtual { get; set; }
 
+        // UserID que vem do Login/Index.cshtml
+        [BindProperty(SupportsGet = true)]
+        public int userID { get; set; }
 
         //this context is our database
         private readonly ApplicationDbContext _context;
+
+
+
         public MainScreenClient(ApplicationDbContext context)
         {
             _context = context;
 
+        }
+
+        public void OnGet()
+        {
+            Console.WriteLine("userID =" + userID);
+            System.Diagnostics.Debug.WriteLine("userID = " + userID);
+
             // Retrieve ClienteModel from the database based on clienteID
-            this.ClienteModelAtual = _context.ClienteDB.FirstOrDefault(c => c.Id == clienteAtualID);
+            this.ClienteModelAtual = _context.ClienteDB.FirstOrDefault(c => c.Id == userID);
 
 
             this.seriesDoCliente = _context.ClienteSeriesDB
@@ -37,22 +49,19 @@ namespace Shows4All.Pages
             //Ver o que se na consola temos todas as séries do Cliente;
             Console.WriteLine(seriesDoCliente);
 
-
-
+            // Retrieve series not bought by the client
+            this.todasAsSeriesNaoCompradasPeloCliente = GetSeriesNotBoughtByClient(userID);
         }
 
-        public void OnGet()
+        private List<SerieModel> GetSeriesNotBoughtByClient(int userID)
         {
-            //Example of Client Buying a new Serie
-            // clienteSeriesModel = new ClienteSeriesModel(this._context);
+            // Use LINQ to query and find series not bought by the client
+            var seriesNotBought = _context.SerieDB
+                .Where(serie => !_context.ClienteSeriesDB
+                    .Any(clienteSerie => clienteSerie.ClientModel.Id == userID && clienteSerie.SerieModel.Id == serie.Id))
+                .ToList();
 
-            //var ClientId = 1;
-            //var SerieId = 10;
-
-            //clienteSeriesModel.Initialize(ClientId, SerieId, 2.00);
-
-            //_context.ClienteSeriesDB.Add(clienteSeriesModel);
-            //_context.SaveChanges();
+            return seriesNotBought;
         }
 
     }

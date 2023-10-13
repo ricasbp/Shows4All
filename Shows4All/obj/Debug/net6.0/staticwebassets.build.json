@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KJMpat6n2lthks0FCujGTj0IbVdv/BLie+7DcUE+wXA=",
+  "Hash": "9fYxf1JfaGJxKEi8n11jtziTHFy6uWPGvV/5mHjoO+0=",
   "Source": "Shows4All",
   "BasePath": "_content/Shows4All",
   "Mode": "Default",
@@ -187,6 +187,23 @@
       "OriginalItemSpec": "wwwroot\\images\\puss.jpg"
     },
     {
+      "Identity": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\shrek2.jpg",
+      "SourceId": "Shows4All",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\",
+      "BasePath": "_content/Shows4All",
+      "RelativePath": "images/shrek2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\shrek2.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\silence.jpg",
       "SourceId": "Shows4All",
       "SourceType": "Discovered",
@@ -202,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\silence.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\Spiderverse.jpg",
+      "SourceId": "Shows4All",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\",
+      "BasePath": "_content/Shows4All",
+      "RelativePath": "images/Spiderverse.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Spiderverse.jpg"
     },
     {
       "Identity": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\wolf.jpg",

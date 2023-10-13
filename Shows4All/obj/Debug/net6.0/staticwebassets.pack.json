@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\Spiderverse.jpg",
+      "PackagePath": "staticwebassets\\images\\Spiderverse.jpg"
+    },
+    {
       "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\fireflies.jpg",
       "PackagePath": "staticwebassets\\images\\fireflies.jpg"
     },
@@ -35,6 +39,10 @@
     {
       "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\puss.jpg",
       "PackagePath": "staticwebassets\\images\\puss.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\shrek2.jpg",
+      "PackagePath": "staticwebassets\\images\\shrek2.jpg"
     },
     {
       "Id": "C:\\Users\\Ricas\\Desktop\\Elson\\Project - Dia15\\Shows4All\\Shows4All\\wwwroot\\images\\silence.jpg",

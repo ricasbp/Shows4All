@@ -11,6 +11,9 @@ namespace Shows4All.Data
 
         public DbSet<ClienteSeriesModel> ClienteSeriesDB { get; set; }
 
+        public DbSet<AvaliacaoModel> AvaliacaoDB { get; set; }
+
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
