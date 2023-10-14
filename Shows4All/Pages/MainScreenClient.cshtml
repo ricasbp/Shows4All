@@ -19,8 +19,7 @@
 
 <div class="text-center">
     <div class="mainText">
-    <!--  Comentário: CSS Geral da Aplicação definido em site.css -->
-        <h1 class="display-4">Bem-Vindo ao Shows4All</h1>
+        <h1 class="display-4">Bem-Vindo ao Shows4All @Model.ClienteModelAtual.Username!</h1>
         <h3> Continua a ver as tuas séries!  </h3>
         <div class="container">
             <div class= "row">
@@ -30,15 +29,10 @@
                                             e queremos ter 4 series displayed.
                                       mb = Margin e  mt = Margin -->
                     <div class=" w-100 row makeYourOwnDiv">
-                        <!--  Comentário: Esta class vai ser o Design Geral das Series.
-                                          w = width -->
-
-
                         @foreach (var serie in Model.seriesDoCliente)
                         {
                             var imagePath = "/images/" + (serie.imageURL + ".jpg");
                             <div class="col-3">
-                                <!--  Comentário: Perguntei ChatGPT como fazer imagens terem sempre o mesmo tamanho. -->
                                 <!-- Make the image clickable and link to the SerieInfo page with SerieId and ClientID-->
                                 <a asp-page="Checkout/SerieInfo" asp-route-seriesId="@serie.Id" asp-route-clientID="@Model.ClienteModelAtual.Id">
                                     <img src="@imagePath" class="img-fluid" style="max-width: 100%; height: auto;" alt="@serie.SerieName">
@@ -77,6 +71,3 @@
             </div>
         </div>
 </div>
-
-<a class="nav-link text-dark" asp-area="" asp-page="/Form/SerieEdit">SerieEdit</a>
-<a class="nav-link text-dark" asp-area="" asp-page="/Checkout/SerieInfo">SerieInfo</a>

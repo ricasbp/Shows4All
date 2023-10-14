@@ -11,8 +11,6 @@ namespace Shows4All.Models
         public double Price { get; set; }
         public string imageURL { get; set; }
 
-
-
         public SerieModel()
         {
         }

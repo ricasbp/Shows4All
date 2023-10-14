@@ -1,0 +1,58 @@
+﻿@page
+@model Shows4All.Pages.MainScreenAdmin
+@{
+}
+
+<!--  Comentário, Não tenho estas teclas no computador:
+<
+>
+<div></div>
+<br>
+-->
+
+<header>
+    <nav class="show-navigation">
+        <!-- Show Navigation barn-->
+    </nav>
+</header>
+
+
+<div class="text-center">
+    <div class="mainText">
+        <h1 class="display-4">Bem-Vindo ao Shows4All Admin @Model.ClienteModelAtual.Username!</h1>
+
+        <h3> Criar uma nova série aqui:     </h3>
+        <!-- Button to create a new Serie -->
+        <a asp-page="/Checkout/SerieCreate" style="padding: 10px;" class="btn btn-primary">Create New Serie Here</a>
+
+
+        <h3> Toda as Séries no Shows4All:     </h3>
+        <div class="container">
+            <div class= "row">
+                <div class="col-12 mb-5 mt-5">
+                    <!--  Comentário: Usando o boostrap usamos a default class "containter"
+                                      Usamos col-3, porque no boostrap o website é devidido em 12 "espaços"
+                                            e queremos ter 4 series displayed.
+                                      mb = Margin e  mt = Margin -->
+                    <div class=" w-100 row makeYourOwnDiv">
+
+                        @foreach (var serie in Model.todasAsSeries)
+                        {
+                            var imagePath = "/images/" + (serie.imageURL + ".jpg");
+                            <div class="col-3">
+                                <!-- Make the image clickable and link to the SerieInfo page with SerieId and ClientID-->
+                                <a asp-page="Checkout/SerieEdit" asp-route-seriesId="@serie.Id" asp-route-clientID="@Model.ClienteModelAtual.Id">
+                                    <img src="@imagePath" class="img-fluid" style="max-width: 100%; height: auto;" alt="@serie.SerieName">
+                                </a>
+                                <h3> @serie.SerieName  </h3>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -7,14 +7,14 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Shows4All.Pages.Form
 {
-    public class SerieEditModel : PageModel
+    public class SerieCreateModel : PageModel
     {
         [BindProperty]
         public SerieModel Serie { get; set; }
 
         //this context is our database
         private readonly ApplicationDbContext _context;
-        public SerieEditModel(ApplicationDbContext context)
+        public SerieCreateModel(ApplicationDbContext context)
         {
             _context = context;
         }

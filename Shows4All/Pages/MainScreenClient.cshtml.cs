@@ -14,6 +14,7 @@ namespace Shows4All.Pages
 
         [BindProperty]
         public ClienteSeriesModel ClienteSeries { get; set; }
+        [BindProperty]
         public ClienteModel ClienteModelAtual { get; set; }
 
         // UserID que vem do Login/Index.cshtml

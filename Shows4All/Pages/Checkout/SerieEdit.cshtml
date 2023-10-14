@@ -1,0 +1,52 @@
+﻿@page
+@model Shows4All.Pages.Checkout.SerieEditModel
+@{
+    ViewData["Title"] = "Serie Details";
+}
+
+<!--  Comentário, Não tenho estas teclas no computador:
+<
+>
+<div></div>
+<br>
+-->
+
+<div class="container">
+    <h1>@Model.SerieAtual.SerieName</h1>
+    <img src="~/images/@(Model.SerieAtual.imageURL).jpg" class="img-fluid" style="max-width: 240px;" alt="@Model.SerieAtual.SerieName" />
+    <p>Description: @Model.SerieAtual.Description</p>
+    <p>Price: @Model.SerieAtual.Price €</p>
+
+    
+
+
+    <form method="post" >
+        <!-- Save the ID in this View so it knows the information to make the Post on the ViewModel -->
+        <input type="hidden" name="seriesId" value="@Model.SerieAtual.Id" />
+
+        <!-- Save the ImageURL in this View so it knows the information to make the Post on the ViewModel -->
+        <input type="hidden" name="imageURL" value="@Model.SerieAtual.imageURL" />
+
+
+        <!-- Input fields for editing Serie properties -->
+        <div class="form-group">
+            <label for="SerieAtual.SerieName">Serie Name</label>
+            <input asp-for="SerieAtual.SerieName" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="SerieAtual.Description">Description</label>
+            <textarea asp-for="SerieAtual.Description" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="SerieAtual.Price">Price (€)</label>
+            <input asp-for="SerieAtual.Price" class="form-control" />
+        </div>
+
+        <!-- Add input fields for other Serie properties as needed -->
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+
+
+</div>
