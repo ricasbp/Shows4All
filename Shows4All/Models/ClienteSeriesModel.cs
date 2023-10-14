@@ -15,6 +15,8 @@ namespace Shows4All.Models
 
         public Double PricePaid { get; set; }
 
+        public Double PricePaid { get; set; }
+
         private readonly ApplicationDbContext _context;
 
         public ClienteSeriesModel(ApplicationDbContext context)

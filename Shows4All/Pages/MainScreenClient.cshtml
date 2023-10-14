@@ -10,11 +10,6 @@
 <br>
 -->
 
-<header>
-    <nav class="show-navigation">
-        <!-- Show Navigation barn-->
-    </nav>
-</header>
 
 
 <div class="text-center">
@@ -55,16 +50,16 @@
                                     e queremos ter 4 series displayed.
                                 mb = Margin e  mt = Margin -->
             <div class=" w-100 row makeYourOwnDiv">
-                <!--  Comentário: Esta class vai ser o Design Geral das Series.
-                                                w = width -->
 
                     @foreach (var serie in Model.todasAsSeriesNaoCompradasPeloCliente)
                     {
                         var imagePath = "/images/" + (serie.imageURL + ".jpg");
                         <div class="col-3">
-                            <!--  Comentário: Perguntei ChatGPT como fazer imagens terem sempre o mesmo tamanho. -->
-                            <img src="@imagePath" class="img-fluid" style="max-width: 100%; height: auto;" alt=@serie.SerieName>
-                            <h3> @serie.SerieName  </h3>
+                        <!-- Make the image clickable and link to the SerieInfo page with SerieId and ClientID-->
+                        <a asp-page="SerieBuy" asp-route-seriesId="@serie.Id" asp-route-clientID="@Model.ClienteModelAtual.Id">
+                            <img src="@imagePath" class="img-fluid" style="max-width: 100%; height: auto;" alt="@serie.SerieName">
+                        </a>
+                        <h3> @serie.SerieName  </h3>
                         </div>
                     }
 

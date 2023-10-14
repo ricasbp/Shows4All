@@ -1,0 +1,44 @@
+﻿@page
+@model Shows4All.Pages.Checkout.SerieBuyModel
+@{
+    ViewData["Title"] = "Serie Details";
+}
+
+<!--  Comentário, Não tenho estas teclas no computador:
+<
+>
+<div></div>
+<br>
+-->
+
+<div class="container">
+    <h1>@Model.SerieAtual.SerieName</h1>
+    <img src="~/images/@(Model.SerieAtual.imageURL).jpg" class="img-fluid" style="max-width: 240px;" alt="@Model.SerieAtual.SerieName" />
+    <p>Descrição: @Model.SerieAtual.Description</p>
+    <p>Preço Atual: @Model.SerieAtual.Price €</p>
+
+ 
+    <form method="post">
+
+        <!-- Save the ID's in this View so it knows the information to make the Post on the ViewModel -->
+        <input type="hidden" name="clientID" value="@Model.ClienteAtual.Id" />
+        <input type="hidden" name="seriesId" value="@Model.SerieAtual.Id" />
+
+        <button type="submit" class="btn btn-primary">Clica Aqui para Comprar Série!</button>
+    </form>
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+
+</div>

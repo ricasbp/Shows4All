@@ -14,8 +14,8 @@
 <div class="container">
     <h1>@Model.SerieAtual.SerieName</h1>
     <img src="~/images/@(Model.SerieAtual.imageURL).jpg" class="img-fluid" style="max-width: 240px;" alt="@Model.SerieAtual.SerieName" />
-    <p>Description: @Model.SerieAtual.Description</p>
-    <p>Price: @Model.SerieAtual.Price €</p>
+    <p>Descrição: @Model.SerieAtual.Description</p>
+    <p>Preço Atual: @Model.SerieAtual.Price €</p>
 
     @{
         bool hasExistingReview = Model.avaliacaoPassada != null;

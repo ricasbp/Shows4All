@@ -24,8 +24,6 @@ namespace Shows4All.Pages
         //this context is our database
         private readonly ApplicationDbContext _context;
 
-
-
         public MainScreenClient(ApplicationDbContext context)
         {
             _context = context;
