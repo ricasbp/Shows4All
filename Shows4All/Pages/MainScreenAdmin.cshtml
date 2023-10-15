@@ -19,7 +19,7 @@
 
 <div class="text-center">
     <div class="mainText">
-        <h1 class="display-4">Bem-Vindo ao Shows4All Admin @Model.ClienteModelAtual.Username!</h1>
+        <h1 class="display-4">Bem-Vindo ao Shows4All Admin </h1>
 
         
 
@@ -38,7 +38,7 @@
                             var imagePath = "/images/" + (serie.imageURL + ".jpg");
                             <div class="col-3">
                                 <!-- Make the image clickable and link to the SerieInfo page with SerieId and ClientID-->
-                                <a asp-page="Checkout/SerieEdit" asp-route-seriesId="@serie.Id" asp-route-clientID="@Model.ClienteModelAtual.Id">
+                                <a class="hover-scale"  asp-page="Checkout/SerieEdit" asp-route-seriesId="@serie.Id" >
                                     <img src="@imagePath" class="img-fluid" style="max-width: 100%; height: auto;" alt="@serie.SerieName">
                                 </a>
                                 <h3> @serie.SerieName  </h3>
@@ -53,7 +53,7 @@
 
         <h3> Cria uma nova série aqui:     </h3>
         <!-- Button to create a new Serie -->
-        <a asp-page="/Checkout/SerieCreate" style="padding: 10px;" class="btn btn-primary">Criar Série</a>
+        <a asp-page="/Form/SerieCreate" style="padding: 10px;" class="btn btn-primary">Criar Série</a>
 
 
     </div>

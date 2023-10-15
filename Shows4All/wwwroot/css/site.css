@@ -22,3 +22,9 @@ body {
 .mainText{
     padding: 75px 20px;
 }
+
+/* CSS for the hover effect */
+.hover-scale :hover {
+    transform: scale(1.05);
+    transition: transform 0.3s; /* Add a smooth transition for the scaling effect */
+}

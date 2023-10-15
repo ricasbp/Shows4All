@@ -44,13 +44,14 @@ namespace Shows4All.Pages.Checkout
             }
             this.NovaClienteSeries = new ClienteSeriesModel(this._context);
 
-            this.NovaClienteSeries.Initialize(ClienteAtual.Id, SerieAtual.Id, SerieAtual.Price);
+            DateTime currentDateTime = DateTime.Now;
+
+            this.NovaClienteSeries.Initialize(ClienteAtual.Id, SerieAtual.Id, SerieAtual.Price, currentDateTime);
 
             // Add the new review to the database
             _context.ClienteSeriesDB.Add(NovaClienteSeries);
             _context.SaveChanges();
 
-            TempData["SuccessMessage"] = "Review added successfully.";
             return RedirectToPage("/MainScreenClient", new { userID = clientID }); //userID é o nome da variavél na pagina MainScreenClient
 
         }

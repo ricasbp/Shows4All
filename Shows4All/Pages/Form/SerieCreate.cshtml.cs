@@ -19,9 +19,16 @@ namespace Shows4All.Pages.Form
             _context = context;
         }
         
-        public void OnGet()
+        public RedirectToPageResult OnPost()
         {
-            
+            // Add the Serie to the context
+            _context.SerieDB.Add(Serie);
+
+            // Save the changes to the database
+            _context.SaveChanges();
+
+            // Redirect to a success page or perform other actions.
+            return RedirectToPage("/MainScreenAdmin"); // Redirect to a protected
         }
-    }
+     }
 }

@@ -19,6 +19,8 @@ namespace Shows4All.Pages.Checkout
         [BindProperty]
         public AvaliacaoModel? novaAvaliacao { get; set; }
 
+        public ClienteSeriesModel ClienteSeriesModel;
+
         //this context is our database
         private readonly ApplicationDbContext _context;
 
@@ -33,6 +35,10 @@ namespace Shows4All.Pages.Checkout
 
             this.ClienteAtual = _context.ClienteDB.FirstOrDefault(c => c.Id == clientID);
             this.SerieAtual = _context.SerieDB.FirstOrDefault(s => s.Id == seriesId);
+
+            // Use a LINQ query to find the ClientSerieModel With pricePaid and time
+            this.ClienteSeriesModel = _context.ClienteSeriesDB
+                .FirstOrDefault(a => a.ClientModel.Id == clientID && a.SerieModel.Id == seriesId);
 
             // Use a LINQ query to find the review with the specified client and series
             this.avaliacaoPassada = _context.AvaliacaoDB
@@ -60,35 +66,27 @@ namespace Shows4All.Pages.Checkout
                 int.TryParse(Request.Form["seriesId"], out int seriesId))
             {
                 // Now you have clientID and seriesId available for further use
-                this.SerieAtual = _context.SerieDB.FirstOrDefault(s => s.Id == seriesId); ;
-                this.ClienteAtual = _context.ClienteDB.FirstOrDefault(c => c.Id == clientID); ;
+                this.SerieAtual = _context.SerieDB.FirstOrDefault(s => s.Id == seriesId);
+                this.ClienteAtual = _context.ClienteDB.FirstOrDefault(c => c.Id == clientID);
+
+                // Use a LINQ query to find the ClientSerieModel With pricePaid and time
+                this.ClienteSeriesModel = _context.ClienteSeriesDB
+                    .FirstOrDefault(a => a.ClientModel.Id == clientID && a.SerieModel.Id == seriesId);
 
             }
 
-            // Check if the review already exists for the same client and series
-            var existingReview = _context.AvaliacaoDB
-                .FirstOrDefault(a => a.SerieModel.Id == SerieAtual.Id && a.ClientModel.Id == ClienteAtual.Id);
+            // Attach the review to the current series
+            this.novaAvaliacao.SerieModel = SerieAtual;
+            // Attach the client to the current series
+            this.novaAvaliacao.ClientModel = ClienteAtual;
 
-            if (existingReview != null)
-            {
-                TempData["ErrorMessage"] = "You have already reviewed this series.";
-                return Page();
-            }
-            else if (ModelState.IsValid)
-            {
-                // Attach the review to the current series
-                this.novaAvaliacao.SerieModel = SerieAtual;
-                // Attach the client to the current series
-                this.novaAvaliacao.ClientModel = ClienteAtual;
+            // Add the new review to the database
+            _context.AvaliacaoDB.Add(novaAvaliacao);
+            _context.SaveChanges();
 
-                // Add the new review to the database
-                _context.AvaliacaoDB.Add(novaAvaliacao);
-                _context.SaveChanges();
+            TempData["SuccessMessage"] = "Review added successfully.";
+            return RedirectToPage("/Checkout/SerieInfo", new { clientID = ClienteAtual.Id, seriesId = SerieAtual.Id}); //userID é o nome da variavél na pagina MainScreenClient
 
-                TempData["SuccessMessage"] = "Review added successfully.";
-                return Page();
-            }
-            return Page();
         }
     }
 }

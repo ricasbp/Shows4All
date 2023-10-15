@@ -10,9 +10,6 @@ namespace Shows4All.Pages
     {
         public List<SerieModel> todasAsSeries = new List<SerieModel>();
 
-        // UserID que vem do Login/Index.cshtml
-        [BindProperty(SupportsGet = true)]
-        public int userID { get; set; }
 
         [BindProperty]
         public ClienteModel ClienteModelAtual { get; set; }
@@ -30,11 +27,7 @@ namespace Shows4All.Pages
 
         public void OnGet()
         {
-            // Retrieve ClienteModel from the database based on clienteID
-            this.ClienteModelAtual = _context.ClienteDB.FirstOrDefault(c => c.Id == userID);
-
             this.todasAsSeries = _context.SerieDB.ToList();
-
         }
 
 

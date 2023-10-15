@@ -15,9 +15,9 @@ namespace Shows4All.Models
 
         public Double PricePaid { get; set; }
 
-        public Double PricePaid { get; set; }
+        public DateTime DataDeCompra { get; set; }
 
-        private readonly ApplicationDbContext _context;
+    private readonly ApplicationDbContext _context;
 
         public ClienteSeriesModel(ApplicationDbContext context)
         {
@@ -25,7 +25,7 @@ namespace Shows4All.Models
         }
 
         // Method to set properties
-        public void Initialize(int clienteID, int serieID, double pricePaid)
+        public void Initialize(int clienteID, int serieID, double pricePaid, DateTime DataDeCompra)
         {
             // Retrieve ClienteModel from the database based on clienteID
             this.ClientModel = _context.ClienteDB.FirstOrDefault(c => c.Id == clienteID);
@@ -34,6 +34,8 @@ namespace Shows4All.Models
             this.SerieModel = _context.SerieDB.FirstOrDefault(s => s.Id == serieID);
 
             this.PricePaid = pricePaid;
+
+            this.DataDeCompra = DataDeCompra;
         }
     }
 }

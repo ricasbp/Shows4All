@@ -15,8 +15,11 @@
     <h1>@Model.SerieAtual.SerieName</h1>
     <img src="~/images/@(Model.SerieAtual.imageURL).jpg" class="img-fluid" style="max-width: 240px;" alt="@Model.SerieAtual.SerieName" />
     <p>Descrição: @Model.SerieAtual.Description</p>
-    <p>Preço Atual: @Model.SerieAtual.Price €</p>
 
+    <p>Comprado com o seguinte preço: @Model.ClienteSeriesModel.PricePaid €</p>
+    <p>Comprado em: @Model.ClienteSeriesModel.DataDeCompra</p>
+
+    <p>Preço Atual: @Model.SerieAtual.Price €</p>
     @{
         bool hasExistingReview = Model.avaliacaoPassada != null;
     }

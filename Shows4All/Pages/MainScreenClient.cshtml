@@ -13,6 +13,7 @@
 
 
 <div class="text-center">
+
     <div class="mainText">
         <h1 class="display-4">Bem-Vindo ao Shows4All @Model.ClienteModelAtual.Username!</h1>
         <h3> Continua a ver as tuas séries!  </h3>
@@ -29,8 +30,9 @@
                             var imagePath = "/images/" + (serie.imageURL + ".jpg");
                             <div class="col-3">
                                 <!-- Make the image clickable and link to the SerieInfo page with SerieId and ClientID-->
-                                <a asp-page="Checkout/SerieInfo" asp-route-seriesId="@serie.Id" asp-route-clientID="@Model.ClienteModelAtual.Id">
+                                <a class="hover-scale" asp-page="Checkout/SerieInfo" asp-route-seriesId="@serie.Id" asp-route-clientID="@Model.ClienteModelAtual.Id">
                                     <img src="@imagePath" class="img-fluid" style="max-width: 100%; height: auto;" alt="@serie.SerieName">
+
                                 </a>
                                 <h3> @serie.SerieName  </h3>
                             </div>
@@ -56,7 +58,7 @@
                         var imagePath = "/images/" + (serie.imageURL + ".jpg");
                         <div class="col-3">
                         <!-- Make the image clickable and link to the SerieInfo page with SerieId and ClientID-->
-                        <a asp-page="SerieBuy" asp-route-seriesId="@serie.Id" asp-route-clientID="@Model.ClienteModelAtual.Id">
+                        <a class="hover-scale" asp-page="SerieBuy" asp-route-seriesId="@serie.Id" asp-route-clientID="@Model.ClienteModelAtual.Id">
                             <img src="@imagePath" class="img-fluid" style="max-width: 100%; height: auto;" alt="@serie.SerieName">
                         </a>
                         <h3> @serie.SerieName  </h3>

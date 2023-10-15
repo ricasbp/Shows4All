@@ -61,7 +61,7 @@ namespace Shows4All.Pages.Checkout
 
             }
             // 4. Abrir outra vez este ViewModel
-            return RedirectToPage("/Checkout/SerieEdit", new { seriesId = seriesId });
+            return RedirectToPage("/MainScreenAdmin");
 
         }
     }
