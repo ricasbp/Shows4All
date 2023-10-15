@@ -18,7 +18,7 @@ A empresa Shows4All apresenta-se como uma concorrente da Netflix.
 -----------
 #Informações:
 -----------
-Neste projeto, foi primeiro construido o Diagrama de Classes, o Modelo da Base de Dados e as Páginas do Website, no ficheiro Shows4All.drawio.
+Neste projeto, foi primeiro construido o Diagrama de Classes, o Modelo da Base de Dados e as Páginas do Website, no ficheiro Shows4All.drawio (Se usar dark mode, por favor abrir no website: draw.io).
 Depois de planeada esta arquitetura, foi construida a aplicação tendo em conta a mesma.
 
 -----------

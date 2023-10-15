@@ -24,6 +24,14 @@ namespace Shows4All.Models
             _context = context;
         }
 
+        public ClienteSeriesModel(int ClientModelId, int SerieModelId, int PricePaid, DateTime DataDeCompra)
+        {
+            this.ClientModel.Id = ClientModelId;
+            this.SerieModel.Id = SerieModelId;
+            this.PricePaid = PricePaid;
+            this.DataDeCompra = DataDeCompra;
+        }
+
         // Method to set properties
         public void Initialize(int clienteID, int serieID, double pricePaid, DateTime DataDeCompra)
         {

@@ -2,6 +2,10 @@
 {
     public class ClienteModel
     {
+        private string v1;
+        private string v2;
+        private bool v3;
+
         public int Id { get; set; }
         public string? Username { get; set; }
 
@@ -9,13 +13,11 @@
 
         public Boolean? isAdmin { get; set; }
 
-        public ClienteModel()
+        public ClienteModel(string v1, string v2, bool v3)
         {
-            //First test
-            //this.Username = "Elson";
-            //this.Password = "ola";
-            //this.isAdmin = false;
-
+            this.Username = v1;
+            this.Password = v2;
+            this.isAdmin = v3;
         }
     }
 

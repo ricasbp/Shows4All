@@ -23,8 +23,8 @@ namespace Shows4All.Pages
 
         public void OnGet()
         {
+            //
             //Populate our SerieDB
-            /*
             SerieModel serie1 = new SerieModel("The Shining", "Horror Movie", 2, "jack");
             SerieModel serie2 = new SerieModel("The Wolf of Wall Street", "Action", 2, "wolf");
             SerieModel serie3 = new SerieModel("Silence of the Lambs", "Action Anime", 5, "silence");
@@ -33,6 +33,8 @@ namespace Shows4All.Pages
             SerieModel serie6 = new SerieModel("Puss in the Boots", "Animation", 7, "puss");
             SerieModel serie7 = new SerieModel("Princess Mononoke", "Action Anime", 5, "mononoke");
             SerieModel serie8 = new SerieModel("The Grave of the Fireflies", "Drama Anime", 5, "fireflies");
+            SerieModel serie9 = new SerieModel("Shrek 2", "Horror Movie", 2, "Shrek2");
+            SerieModel serie10 = new SerieModel("Spider-Man into the SpiderVerse", "Action Animation", 2, "Spiderverse");
 
             _context.SerieDB.Add(serie1);
             _context.SerieDB.Add(serie2);
@@ -42,54 +44,69 @@ namespace Shows4All.Pages
             _context.SerieDB.Add(serie6);
             _context.SerieDB.Add(serie7);
             _context.SerieDB.Add(serie8);
+            _context.SerieDB.Add(serie9);
+            _context.SerieDB.Add(serie10);
+            
+            //
+            // Populate our ClientDB
+            ClienteModel client1 = new ClienteModel("Elson", "ola", false);
+            ClienteModel client2 = new ClienteModel("Elson2", "ola", true);
+
+            _context.ClienteDB.Add(client1);
+            _context.ClienteDB.Add(client2);
+            
+            //
+            // Populate our ClienteSeriesDB
+            ClienteSeriesModel ClienteSeries1 = new ClienteSeriesModel(1,2,5, DateTime.Now);
+            ClienteSeriesModel ClienteSeries2 = new ClienteSeriesModel(1,3,2, DateTime.Now);
+            ClienteSeriesModel ClienteSeries3 = new ClienteSeriesModel(1,4,2, DateTime.Now);
+
+            _context.ClienteSeriesDB.Add(ClienteSeries1);
+            _context.ClienteSeriesDB.Add(ClienteSeries2);
+            _context.ClienteSeriesDB.Add(ClienteSeries3);
+            
+            //
+            // Save Changes
             _context.SaveChanges();
-            */
-
-            /*
-            SerieModel serie1 = new SerieModel("Shrek 2", "Horror Movie", 2, "Shrek2");
-            _context.SerieDB.Add(serie1);
-            SerieModel serie2 = new SerieModel("Spider-Man into the SpiderVerse", "Action Animation", 2, "Spiderverse");
-            _context.SerieDB.Add(serie2);
-            _context.SaveChanges();
-            */
+            
         }
-        public IActionResult OnPost()
-{
-
-//_context.ClienteDB.Add(new ClienteModel());
-//_context.SaveChanges();
-
-
-if (ModelState.IsValid)
-{
-    // Attempt to find a user with the provided username in the database
-    var user = _context.ClienteDB.FirstOrDefault(u => u.Username == Login.Username);
-
-    if (user != null && IsPasswordValid(user, Login.Password))
-    {
-        // Successful login
-
-        if ((bool)user.isAdmin)
+         public IActionResult OnPost()
         {
-            return RedirectToPage("/MainScreenAdmin", new { userID = user.Id }); // Redirect to a protected page
-        }
-        else
+
+        //_context.ClienteDB.Add(new ClienteModel());
+        //_context.SaveChanges();
+
+
+        if (ModelState.IsValid)
         {
-            return RedirectToPage("/MainScreenClient", new { userID = user.Id }); // Redirect to a protected page
+            // Attempt to find a user with the provided username in the database
+            var user = _context.ClienteDB.FirstOrDefault(u => u.Username == Login.Username);
+
+            if (user != null && IsPasswordValid(user, Login.Password))
+            {
+                // Successful login
+
+                if ((bool)user.isAdmin)
+                {
+                    return RedirectToPage("/MainScreenAdmin", new { userID = user.Id }); // Redirect to a protected page
+                }
+                else
+                {
+                    return RedirectToPage("/MainScreenClient", new { userID = user.Id }); // Redirect to a protected page
+                }
+
+            }
+            else
+            {
+                // Invalid login, display an error message
+                ModelState.AddModelError(string.Empty, "Invalid username or password.");
+                return Page(); // Stay on the login page
+            }
         }
 
-    }
-    else
-    {
-        // Invalid login, display an error message
-        ModelState.AddModelError(string.Empty, "Invalid username or password.");
-        return Page(); // Stay on the login page
-    }
-}
-
-// If ModelState is not valid, return to the login page
-return Page();
-}
+        // If ModelState is not valid, return to the login page
+        return Page();
+        }
 
 private bool IsPasswordValid(ClienteModel client, string password)
 {
