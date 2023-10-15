@@ -2,20 +2,11 @@
 A empresa Shows4All apresenta-se como uma concorrente da Netflix.
 
 -----------
-#Extensões Instaladas:
------------
-- 
-- 
--
-
-
------------
-#Contas para Login (Se for necessário criar mais alguma, tem de se adicionar um user ao ClienteDB:
+#Contas para Login (Se for necessário criar mais alguma, tem de se adicionar um user à BaseDeDados):
 -----------
 
 - Admin: Elson2 ola
 - Cliente: Elson ola
-
 
 -----------
 #Informações:
