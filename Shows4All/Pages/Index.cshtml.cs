@@ -22,52 +22,49 @@ namespace Shows4All.Pages
         }
 
         public void OnGet()
-        {
-            //
-            //Populate our SerieDB
-            SerieModel serie1 = new SerieModel("The Shining", "Horror Movie", 2, "jack");
-            SerieModel serie2 = new SerieModel("The Wolf of Wall Street", "Action", 2, "wolf");
-            SerieModel serie3 = new SerieModel("Silence of the Lambs", "Action Anime", 5, "silence");
-            SerieModel serie4 = new SerieModel("Ponyo", "Action Anime", 5, "ponyo");
-            SerieModel serie5 = new SerieModel("Parasite", "Drama, Horror", 2, "parasite");
-            SerieModel serie6 = new SerieModel("Puss in the Boots", "Animation", 7, "puss");
-            SerieModel serie7 = new SerieModel("Princess Mononoke", "Action Anime", 5, "mononoke");
-            SerieModel serie8 = new SerieModel("The Grave of the Fireflies", "Drama Anime", 5, "fireflies");
-            SerieModel serie9 = new SerieModel("Shrek 2", "Horror Movie", 2, "Shrek2");
-            SerieModel serie10 = new SerieModel("Spider-Man into the SpiderVerse", "Action Animation", 2, "Spiderverse");
+        {                
+            // If the SerieDB table is empty, populate it
+            if (!_context.SerieDB.Any())
+            {
+                SerieModel serie1 = new SerieModel("The Shining", "Horror Movie", 2, "jack");
+                SerieModel serie2 = new SerieModel("The Wolf of Wall Street", "Action", 2, "wolf");
+                SerieModel serie3 = new SerieModel("Silence of the Lambs", "Action Anime", 5, "silence");
+                SerieModel serie4 = new SerieModel("Ponyo", "Action Anime", 5, "ponyo");
+                SerieModel serie5 = new SerieModel("Parasite", "Drama, Horror", 2, "parasite");
+                SerieModel serie6 = new SerieModel("Puss in the Boots", "Animation", 7, "puss");
+                SerieModel serie7 = new SerieModel("Princess Mononoke", "Action Anime", 5, "mononoke");
+                SerieModel serie8 = new SerieModel("The Grave of the Fireflies", "Drama Anime", 5, "fireflies");
+                SerieModel serie9 = new SerieModel("Shrek 2", "Horror Movie", 2, "Shrek2");
+                SerieModel serie10 = new SerieModel("Spider-Man into the SpiderVerse", "Action Animation", 2, "Spiderverse");
 
-            _context.SerieDB.Add(serie1);
-            _context.SerieDB.Add(serie2);
-            _context.SerieDB.Add(serie3);
-            _context.SerieDB.Add(serie4);
-            _context.SerieDB.Add(serie5);
-            _context.SerieDB.Add(serie6);
-            _context.SerieDB.Add(serie7);
-            _context.SerieDB.Add(serie8);
-            _context.SerieDB.Add(serie9);
-            _context.SerieDB.Add(serie10);
-            
-            //
-            // Populate our ClientDB
-            ClienteModel client1 = new ClienteModel("Elson", "ola", false);
-            ClienteModel client2 = new ClienteModel("Elson2", "ola", true);
+                _context.SerieDB.Add(serie1);
+                _context.SerieDB.Add(serie2);
+                _context.SerieDB.Add(serie3);
+                _context.SerieDB.Add(serie4);
+                _context.SerieDB.Add(serie5);
+                _context.SerieDB.Add(serie6);
+                _context.SerieDB.Add(serie7);
+                _context.SerieDB.Add(serie8);
+                _context.SerieDB.Add(serie9);
+                _context.SerieDB.Add(serie10);
 
-            _context.ClienteDB.Add(client1);
-            _context.ClienteDB.Add(client2);
-            
-            //
-            // Populate our ClienteSeriesDB
-            ClienteSeriesModel ClienteSeries1 = new ClienteSeriesModel(1,2,5, DateTime.Now);
-            ClienteSeriesModel ClienteSeries2 = new ClienteSeriesModel(1,3,2, DateTime.Now);
-            ClienteSeriesModel ClienteSeries3 = new ClienteSeriesModel(1,4,2, DateTime.Now);
+                //
+                // Save Changes
+                _context.SaveChanges();
+            }
+            // If the ClienteDB table is empty, populate it
+            if (!_context.ClienteDB.Any())
+            {
+                ClienteModel client1 = new ClienteModel("Elson", "ola", false);
+                ClienteModel client2 = new ClienteModel("Elson2", "ola", true);
 
-            _context.ClienteSeriesDB.Add(ClienteSeries1);
-            _context.ClienteSeriesDB.Add(ClienteSeries2);
-            _context.ClienteSeriesDB.Add(ClienteSeries3);
-            
-            //
-            // Save Changes
-            _context.SaveChanges();
+                _context.ClienteDB.Add(client1);
+                _context.ClienteDB.Add(client2);
+
+                //
+                // Save Changes
+                _context.SaveChanges();
+            }
             
         }
          public IActionResult OnPost()

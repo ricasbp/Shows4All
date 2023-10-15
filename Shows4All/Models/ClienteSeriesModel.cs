@@ -26,6 +26,9 @@ namespace Shows4All.Models
 
         public ClienteSeriesModel(int ClientModelId, int SerieModelId, int PricePaid, DateTime DataDeCompra)
         {
+            this.ClientModel = new ClienteModel();
+            this.SerieModel = new SerieModel();
+
             this.ClientModel.Id = ClientModelId;
             this.SerieModel.Id = SerieModelId;
             this.PricePaid = PricePaid;
