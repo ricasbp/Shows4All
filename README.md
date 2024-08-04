@@ -4,7 +4,8 @@ The company Shows4All presents itself as a competitor to Netflix.
 ![Shows4All3](https://github.com/user-attachments/assets/13aecf7d-041e-4113-8869-a83ed3c49abf)
 
 
-# Login Accounts (If it's necessary to create more, a user needs to be added to the Database):
+# Login Accounts:
+(If it's necessary to create more, a user needs to be added to the Database)
 
     Admin: Elson2 ola
     Client: Elson ola
