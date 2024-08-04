@@ -1,21 +1,24 @@
 # Shows4All
 A empresa Shows4All apresenta-se como uma concorrente da Netflix.
 
+![Shows4All3](https://github.com/user-attachments/assets/13aecf7d-041e-4113-8869-a83ed3c49abf)
+
+
 -----------
-#Contas para Login (Se for necessário criar mais alguma, tem de se adicionar um user à BaseDeDados):
+# Contas para Login (Se for necessário criar mais alguma, tem de se adicionar um user à BaseDeDados):
 -----------
 
 - Admin: Elson2 ola
 - Cliente: Elson ola
 
 -----------
-#Informações:
+# Informações:
 -----------
 Neste projeto, foi primeiro construido o Diagrama de Classes, o Modelo da Base de Dados e as Páginas do Website, no ficheiro Shows4All.drawio (Se usar dark mode, por favor abrir no website: draw.io).
 Depois de planeada esta arquitetura, foi construida a aplicação tendo em conta a mesma.
 
 -----------
-#Modelo usado:
+# Modelo usado:
 -----------
 
 Neste projeto, adotei o padrão arquitetónico MVVM (Model-View-ViewModel) como base para a minha aplicação ASP.NET:
