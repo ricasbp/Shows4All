@@ -1,35 +1,24 @@
 # Shows4All
-A empresa Shows4All apresenta-se como uma concorrente da Netflix.
+The company Shows4All presents itself as a competitor to Netflix.
 
 ![Shows4All3](https://github.com/user-attachments/assets/13aecf7d-041e-4113-8869-a83ed3c49abf)
 
 
------------
-# Contas para Login (Se for necessário criar mais alguma, tem de se adicionar um user à BaseDeDados):
------------
+# Login Accounts (If it's necessary to create more, a user needs to be added to the Database):
 
-- Admin: Elson2 ola
-- Cliente: Elson ola
+    Admin: Elson2 ola
+    Client: Elson ola
 
------------
-# Informações:
------------
-Neste projeto, foi primeiro construido o Diagrama de Classes, o Modelo da Base de Dados e as Páginas do Website, no ficheiro Shows4All.drawio (Se usar dark mode, por favor abrir no website: draw.io).
-Depois de planeada esta arquitetura, foi construida a aplicação tendo em conta a mesma.
+# Information:
 
------------
-# Modelo usado:
------------
+In this project, the Class Diagram, Database Model, and Website Pages were first constructed in the file Shows4All.drawio (If using dark mode, please open on the website: draw.io). After planning this architecture, the application was built according to it.
 
-Neste projeto, adotei o padrão arquitetónico MVVM (Model-View-ViewModel) como base para a minha aplicação ASP.NET:
+# Model Used:
 
-View: As minhas vistas são implementadas como Razor Pages, que residem em classes HTML. Por exemplo, pode verificar o ficheiro SerieInfo.cshtml.
+In this project, I adopted the MVVM (Model-View-ViewModel) architectural pattern as the basis for my ASP.NET application:
 
-ViewModel: Os componentes ViewModel da minha aplicação são representados pelas minhas classes em C#, como SerieInfo.cshtml.cs. Estas classes facilitam a comunicação entre as minhas vistas e os dados subjacentes.
+View: My views are implemented as Razor Pages, which reside in HTML classes. For example, you can check the file SerieInfo.cshtml.
 
-Model: Os meus modelos servem como modelos para várias classes no meu projeto. Fornecem a estrutura necessária para que a base de dados armazene informações e permitem-me recuperar os dados necessários para construir essas classes. 
-Pode encontrar essas classes de modelo no diretório 'Models'.
+ViewModel: The ViewModel components of my application are represented by my C# classes, such as SerieInfo.cshtml.cs. These classes facilitate communication between my views and the underlying data.
 
-Seguindo o padrão MVVM, organizei o meu projeto em camadas distintas, cada uma com a sua função específica, garantindo clareza e facilidade de manutenção no desenvolvimento da minha aplicação.
-
-
+Model: My models serve as templates for various classes in my project. They provide the necessary structure for the database to store information and allow me to retrieve the data needed to construct these classes. You can find these model classes in the 'Models' directory."
